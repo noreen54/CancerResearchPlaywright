@@ -48,7 +48,6 @@ export default class yourDonationPage {
          await this.page.getByLabel('Please choose your donation type. (required)').locator('span').first().click();
     }
 
-
     async YourMotivation()
     {
         //Verify Your Motivation Header
@@ -63,8 +62,12 @@ export default class yourDonationPage {
 
     async WhereYourDonationGoes()
     {
-        expect(this.page.locator('.sc-jSMfEi kfhRUk').filter({ hasText: 'Where your donation goes'})).toBeVisible
-        await this.page.locator('//*[@id="destinationRadioGroup"]/div[1]/label/div[2]/span').click();
+        //validate where your donation goes header 
+        expect(this.page.locator('.sc-jSMfEi kfhRUk').filter({ hasText: 'Where your donation goes'})).toBeVisible;
+        // choose bowel cancer in "where your money donation goes" dropdown
+        await this.page.locator("id=destinationRadioGroup").click();
+        await this.page.locator('div').filter({ hasText: 'Where your donation goesChoose how you would like your donation to fund our work' }).nth(2).click();
+        
     }
 
     async Continue()

@@ -56,7 +56,7 @@ test.describe.serial('User Account tests', () => {
     const payment = new paymentPage(page);
     await payment.veirfyPageURLandDetails();
     await payment.donationMode();
-    await payment.Cerdeitcarinfo();
+    await payment.Creditcardinfo();
 
    })
 
